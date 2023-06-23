@@ -4,7 +4,7 @@
   "info": {
     "singularName": "recipe",
     "pluralName": "recipes",
-    "displayName": "recipe",
+    "displayName": "Recipe",
     "description": ""
   },
   "options": {
@@ -35,8 +35,17 @@
       "target": "api::tag.tag",
       "inversedBy": "recipes"
     },
-    "Ingredients": {
+    "ingredients": {
       "type": "richtext"
+    },
+    "description": {
+      "type": "text"
+    },
+    "prepTime": {
+      "type": "string"
+    },
+    "cookTime": {
+      "type": "string"
     }
   }
 }
