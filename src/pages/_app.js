@@ -3,18 +3,15 @@ import Head from 'next/head';
 
 import '../app/globals.css'
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
+function MyApp({ Component, pageProps }) {
+  return (
       <>
         <Head>
           <html lang="en" translate="no" />
         </Head>
         <Component {...pageProps} />
       </>
-    );
-  }
+  )
 }
 
-export default MyApp;
+export default MyApp
