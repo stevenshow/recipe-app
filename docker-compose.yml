@@ -1,0 +1,34 @@
+version: "3"
+services:
+  cms:
+    build:
+      context: ./cms/
+      args:
+        - NODE_ENV=${NODE_ENV:-production}
+    restart: unless-stopped
+    ports:
+      - "1337:1337"
+    networks:
+      - app
+  database:
+    image: postgres:12.0-alpine
+    restart: unless-stopped
+    env_file: ./cms/local.env
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      -  strapi-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - app
+
+volumes:
+  strapi-data:
+
+networks:
+  app:
+    driver: bridge
+
