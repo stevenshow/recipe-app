@@ -8,8 +8,7 @@ import getTags from "./util/getTags";
 
 export default function Recipe({recipe}){
     const tags = getTags(recipe);
-    console.log(tags)
-
+    
     return(
         <div className="flex flex-col gap-4 text-body-gray">
             <Title title={recipe.recipeName}/>

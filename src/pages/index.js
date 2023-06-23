@@ -1,7 +1,8 @@
 import Recipe from "@/components/Recipe"
 
 export async function getStaticProps() {
-  const response = await fetch('http://localhost:1337/api/recipes?populate=tags', {
+  const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:1337/api/recipes?populate=tags' : '/api/recipes?populate=tags';
+  const response = await fetch(apiUrl, {
     headers: {
       'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`,
     },
