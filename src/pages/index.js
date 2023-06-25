@@ -1,5 +1,5 @@
 import Recipe from '@/components/Recipe';
-import Group from '@/components/RecipeGroup/Group';
+import Group from '@/components/RecipeGroup';
 
 export async function getStaticProps() {
 	const apiUrl =
