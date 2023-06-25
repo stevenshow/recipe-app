@@ -14,6 +14,7 @@ module.exports = {
         lobster: ['Lobster', 'cursive'],
         lato: ['Lato', 'sans-serif'],
         arial: ['Arial', 'sans-serif'],
+        georgia: ['Georgia', 'serif'],
       },
       colors: {
         primary: {
