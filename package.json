@@ -1,32 +1,34 @@
 {
-  "name": "recipe-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "next dev",
-    "build": "next build",
-    "prod": "next start",
-    "lint": "next lint",
-    "format": "prettier --write .",
-    "launch": "npm-run-all --parallel db cms:init --parallel cms start ",
-    "db": "docker compose --env-file cms/local.env up -d database",
-    "db:rm": "docker compose --env-file cms/local.env down -v",
-    "cms": "npm run develop -prefix ./cms/",
-    "cms:init": "npm i -prefix ./cms/ --no-save",
-    "cms:build": "docker compose  --env-file cms/.env build --force-rm --pull cms"
-  },
-  "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
-    "next": "13.4.7",
-    "npm-run-all": "^4.1.5",
-    "postcss": "8.4.24",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-markdown": "^8.0.7",
-    "react-syntax-highlighter": "^15.5.0",
-    "tailwindcss": "3.3.2"
-  }
+	"name": "recipe-app",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"start": "next dev",
+		"build": "next build",
+		"prod": "next start",
+		"lint": "next lint",
+		"format": "prettier --write .",
+		"launch": "npm-run-all --parallel db cms:init --parallel cms start ",
+		"db": "docker compose --env-file cms/local.env up -d database",
+		"db:rm": "docker compose --env-file cms/local.env down -v",
+		"cms": "npm run develop -prefix ./cms/",
+		"cms:init": "npm i -prefix ./cms/ --no-save",
+		"cms:build": "docker compose  --env-file cms/.env build --force-rm --pull cms"
+	},
+	"dependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
+		"autoprefixer": "10.4.14",
+		"eslint": "8.43.0",
+		"eslint-config-next": "13.4.7",
+		"next": "13.4.7",
+		"npm-run-all": "^4.1.5",
+		"postcss": "8.4.24",
+		"prettier": "^2.8.8",
+		"prettier-plugin-tailwindcss": "^0.3.0",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-markdown": "^8.0.7",
+		"react-syntax-highlighter": "^15.5.0",
+		"tailwindcss": "3.3.2"
+	}
 }

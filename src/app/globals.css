@@ -3,24 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 /* This sets the color of your bullet points */
 .custom-list-disc {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 .custom-ol {
-  list-style-type: decimal; /* This makes it show numbers */
-  margin-left: 1rem;
+	list-style-type: decimal; /* This makes it show numbers */
+	margin-left: 1rem;
 }
 
-
 .custom-list-disc li::before {
-  content: '•';
-  color: '#333333'; /* Add your desired color here */
-  padding-right: .5rem;
+	content: '•';
+	color: '#333333'; /* Add your desired color here */
+	padding-right: 0.5rem;
 }
