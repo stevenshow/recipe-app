@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 	const apiUrl =
 		process.env.NODE_ENV === 'development'
-			? `http://localhost:1337/api/recipes/${params.id}`
+			? `http://localhost:1337/api/recipes/${params.id}?populate=tags`
 			: `https://api.publicapis.org/entries/${params.id}`;
 	const response = await fetch(apiUrl, {
 		headers: {
