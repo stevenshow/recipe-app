@@ -40,5 +40,5 @@ export default function RecipeViewer({ recipe }) {
 		return <div>Loading...</div>;
 	}
 
-	return <Recipe recipe={recipe.data.attributes} />;
+	return <Recipe recipe={recipe.data?.attributes} />;
 }
