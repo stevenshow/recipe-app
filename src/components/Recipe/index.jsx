@@ -11,11 +11,11 @@ export default function Recipe({ recipe }) {
 
 	return (
 		<div className="flex flex-col gap-4 text-body-gray">
-			<Title title={recipe.recipeName} />
-			<Time prepTime={recipe.prepTime} cookTime={recipe.cookTime} />
-			<Description description={recipe.description} />
-			<Ingredients ingredients={recipe.ingredients} />
-			<Steps instructions={recipe.recipe} />
+			<Title title={recipe?.recipeName} />
+			<Time prepTime={recipe?.prepTime} cookTime={recipe?.cookTime} />
+			<Description description={recipe?.description} />
+			<Ingredients ingredients={recipe?.ingredients} />
+			<Steps instructions={recipe?.recipe} />
 			<Tags tags={tags} />
 		</div>
 	);
