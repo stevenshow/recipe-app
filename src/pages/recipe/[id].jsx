@@ -3,10 +3,7 @@ import { useRouter } from 'next/router';
 
 // This function gets called at build time
 export async function getStaticPaths() {
-	const apiUrl =
-		process.env.NODE_ENV === 'development'
-			? 'http://localhost:1337/api/recipes?populate=tags'
-			: 'https://api.publicapis.org/entries';
+	const apiUrl = 'https://cms.devsteve.net/api/recipes?populate=tags';
 	const response = await fetch(apiUrl, {
 		headers: {
 			Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
@@ -24,10 +21,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const apiUrl =
-		process.env.NODE_ENV === 'development'
-			? `http://localhost:1337/api/recipes/${params.id}?populate=tags`
-			: `https://api.publicapis.org/entries/${params.id}`;
+	const apiUrl = `https://cms.devsteve.net/api/recipes/${params.id}?populate=tags`;
 	const response = await fetch(apiUrl, {
 		headers: {
 			Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,

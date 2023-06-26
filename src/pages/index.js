@@ -2,10 +2,7 @@ import Recipe from '@/components/Recipe';
 import Group from '@/components/RecipeGroup';
 
 export async function getStaticProps() {
-	const apiUrl =
-		process.env.NODE_ENV === 'development'
-			? 'http://localhost:1337/api/recipes?populate=tags'
-			: 'https://api.publicapis.org/entries';
+	const apiUrl = 'https://cms.devsteve.net/api/recipes?populate=tags';
 	const response = await fetch(apiUrl, {
 		headers: {
 			Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
