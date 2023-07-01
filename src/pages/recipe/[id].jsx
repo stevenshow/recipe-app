@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
 
 	const recipe = await response.json();
 
-	return { props: { recipe }, revalidate: 60 };
+	return { props: { recipe }, revalidate: 30 };
 }
 
 export default function RecipeViewer({ recipe }) {

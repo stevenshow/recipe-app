@@ -1,4 +1,3 @@
-import Recipe from '@/components/Recipe';
 import Group from '@/components/RecipeGroup';
 
 export async function getStaticProps() {
@@ -10,13 +9,18 @@ export async function getStaticProps() {
 	});
 
 	const { data } = await response.json();
-	const recipes = data ? data.map((item) => item?.attributes) : [];
+	const recipes = data
+		? data.map((item) => ({
+				id: item.id,
+				...item.attributes,
+		  }))
+		: [];
 
 	return {
 		props: {
 			recipes,
 		},
-		revalidate: 60,
+		revalidate: 30,
 	};
 }
 

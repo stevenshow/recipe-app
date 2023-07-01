@@ -9,7 +9,7 @@ export default function RecipeList({ recipes }) {
 			{recipes.map((recipe, index) => {
 				const tags = getTags(recipe);
 				return (
-					<Link href={`/recipe/${index + 1}`} key={index}>
+					<Link href={`/recipe/${recipe.id}`} key={index}>
 						<li
 							className={`col-span-1 flex flex-col ${
 								recipe.imageUrl ? 'divide-y divide-gray-200' : ''
