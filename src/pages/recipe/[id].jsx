@@ -11,7 +11,12 @@ export async function getStaticPaths() {
 	});
 
 	const { data } = await response.json();
-	const recipes = data ? data.map((item) => item?.attributes) : [];
+	const recipes = data
+		? data.map((item) => ({
+				id: item.id,
+				...item.attributes,
+		  }))
+		: [];
 
 	// Get the paths we want to pre-render based on recipes
 	const paths = recipes.map((recipe) => `/recipe/${recipe.id}`);
@@ -21,7 +26,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const apiUrl = `https://cms.devsteve.net/api/recipes/${params.id}?populate=tags`;
+	const apiUrl = `https://cms.devsteve.net/api/recipes/${params.id}?populate=*`;
 	const response = await fetch(apiUrl, {
 		headers: {
 			Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,

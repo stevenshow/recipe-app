@@ -3,7 +3,7 @@ const nextConfig = {
 	output: 'standalone',
 	reactStrictMode: true,
 	images: {
-		domains: ['images.unsplash.com'],
+		domains: ['images.unsplash.com', 'cms.devsteve.net'],
 	},
 	webpack: (config, { isServer }) => {
 		config.module.rules.push({
