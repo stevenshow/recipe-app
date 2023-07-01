@@ -1,3 +1,3 @@
 export default function Title({ title }) {
-	return <h1 className="font-georgia text-2xl">{title}</h1>;
+	return <h1 className="font-georgia text-3xl">{title}</h1>;
 }
