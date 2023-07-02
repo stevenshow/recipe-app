@@ -12,15 +12,17 @@ export default function RecipeList({ recipes }) {
 		setSearchTerm(event.target.value);
 	};
 
-	const filteredRecipes = recipes.filter((recipe) => {
-		const tags = getTags(recipe);
-		const lowerCaseSearchTerm = searchTerm.toLowerCase();
+	const filteredRecipes = recipes
+		.filter((recipe) => {
+			const tags = getTags(recipe);
+			const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
-		return (
-			recipe.recipeName.toLowerCase().includes(lowerCaseSearchTerm) ||
-			tags.some((tag) => tag.toLowerCase().includes(lowerCaseSearchTerm))
-		);
-	});
+			return (
+				recipe.recipeName.toLowerCase().includes(lowerCaseSearchTerm) ||
+				tags.some((tag) => tag.toLowerCase().includes(lowerCaseSearchTerm))
+			);
+		})
+		.sort((a, b) => a.recipeName.localeCompare(b.recipeName));
 
 	return (
 		<div>
