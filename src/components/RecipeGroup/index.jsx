@@ -22,7 +22,7 @@ export default function RecipeList({ recipes }) {
 				tags.some((tag) => tag.toLowerCase().includes(lowerCaseSearchTerm))
 			);
 		})
-		.sort((a, b) => a.recipeName.localeCompare(b.recipeName));
+		.sort((a, b) => a.recipeName.localeCompare(b.recipeName))	;
 
 	return (
 		<div>
