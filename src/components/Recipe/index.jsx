@@ -15,7 +15,7 @@ export default function Recipe({ recipe }) {
 	const apiUrl = 'https://cms.devsteve.net';
 
 	return (
-		<div className="flex flex-col gap-4 text-body-gray">
+		<div className="mt-8 flex flex-col gap-4 text-body-gray">
 			<Title title={recipe?.recipeName} />
 			{imagePath && (
 				<Image alt="recipe image" src={`${apiUrl}${imagePath}`} width={400} height={500} />
