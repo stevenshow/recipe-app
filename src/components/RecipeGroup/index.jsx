@@ -7,6 +7,7 @@ export default function RecipeList({ recipes }) {
 		<div className="flex flex-wrap">
 			{recipes.map((recipe, index) => {
 				const tags = getTags(recipe);
+				tags.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 				return (
 					<div className="w-full p-3 sm:w-1/2 lg:w-1/3" key={index}>
 						<Link

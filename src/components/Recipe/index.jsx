@@ -13,7 +13,6 @@ export default function Recipe({ recipe }) {
 	const tags = getTags(recipe);
 	const imagePath = getImagePath(recipe);
 	const apiUrl = 'https://cms.devsteve.net';
-	console.log(imagePath);
 
 	return (
 		<div className="flex flex-col gap-4 text-body-gray">
