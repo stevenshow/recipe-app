@@ -29,7 +29,7 @@ export default function RecipeList({ recipes }) {
 				value={searchTerm}
 				onChange={handleSearch}
 				placeholder="Search by title or tag"
-				className="m-auto w-5/6 max-w-[400px] px-3 pb-6"
+				className="m-auto w-5/6 max-w-[400px] px-3 py-6"
 			/>
 			<div className="flex flex-wrap">
 				{filteredRecipes.map((recipe, index) => {
