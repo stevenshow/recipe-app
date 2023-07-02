@@ -39,8 +39,8 @@ export default function RecipeList({ recipes }) {
 					return (
 						<div className="w-full p-3 sm:w-1/2 lg:w-1/3" key={index}>
 							<Link href={`/recipe/${recipe.id}`}>
-								<div className="flex h-full flex-col bg-herbGreen/40 text-center shadow hover:shadow-md">
-									<div className="flex flex-grow flex-col justify-between p-8">
+								<div className="flex h-full flex-col rounded-lg bg-herbGreen/40 text-center shadow hover:shadow-md">
+									<div className="flex flex-grow flex-col justify-between gap-4 p-8">
 										<h3 className="mt-6 font-georgia text-xl font-medium text-gray-700">
 											{recipe.recipeName}
 										</h3>
