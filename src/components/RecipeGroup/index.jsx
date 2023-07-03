@@ -22,7 +22,7 @@ export default function RecipeList({ recipes }) {
 				tags.some((tag) => tag.toLowerCase().includes(lowerCaseSearchTerm))
 			);
 		})
-		.sort((a, b) => a.recipeName.localeCompare(b.recipeName))	;
+		.sort((a, b) => a.recipeName.localeCompare(b.recipeName));
 
 	return (
 		<div>
@@ -41,7 +41,7 @@ export default function RecipeList({ recipes }) {
 					return (
 						<div className="w-full p-3 sm:w-1/2 lg:w-1/3" key={index}>
 							<Link href={`/recipe/${recipe.id}`}>
-								<div className="flex h-full flex-col rounded-lg bg-herbGreen/40 text-center shadow hover:shadow-md">
+								<div className="flex h-full flex-col rounded-lg bg-herbGreen/40 text-center shadow transition-transform duration-200 ease-in-out hover:scale-105 hover:bg-herbGreen/50 hover:shadow-md active:scale-95">
 									<div className="flex flex-grow flex-col justify-between gap-4 p-8">
 										<h3 className="mt-6 font-georgia text-xl font-medium text-gray-700">
 											{recipe.recipeName}
